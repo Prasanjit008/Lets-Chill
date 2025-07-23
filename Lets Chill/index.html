@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Chill - Premium Cold Drinks</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#14b8a6',secondary:'#6366f1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+  </style>
+    
+</head>
+<body class="bg-white">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="logo.png" alt="Lets Chill Logo" class="h-20 w-auto" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+        <a href="#flavors" class="text-gray-700 hover:text-primary transition-colors">Flavors</a>
+        <a href="#distributor" class="text-gray-700 hover:text-primary transition-colors">Become Distributor</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors">Testimonials</a>
+        <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Contact</a>
+      </div>
+
+      <!-- Hamburger Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 py-4 text-center transition-all">
+      <a href="#about" class="text-gray-700 hover:text-primary transition-colors block">About</a>
+      <a href="#flavors" class="text-gray-700 hover:text-primary transition-colors block">Flavors</a>
+      <a href="#distributor" class="text-gray-700 hover:text-primary transition-colors block">Become Distributor</a>
+      <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors block">Testimonials</a>
+      <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors inline-block">Contact</a>
+    </div>
+  </nav>
+
+  <!-- JS to toggle hamburger -->
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</header>
+
+
+ <section
+  class="relative min-h-[30vh] md:min-h-screen flex items-center overflow-hidden bg-cover bg-center"
+  style="background-image: url('hero.jpg');"
+>
+  <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-transparent"></div>
+
+  <!-- 🔥 Scaling container -->
+  <div class="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <div class="transform scale-[0.85] origin-top-left sm:scale-100 transition-transform duration-300">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        
+        <!-- Text Column -->
+        <div class="text-left" data-aos="fade-up" data-aos-delay="100">
+          <h1
+            class="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-5 md:mb-6 leading-tight"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            Thirst for More?<br />
+            <span class="text-black">Lets Chill</span>
+          </h1>
+
+          <p
+            class="hidden sm:block text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-7 md:mb-8 leading-relaxed md:max-w-lg lg:max-w-xl"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
+            Premium Cold Drinks - Bold & Refreshing flavors <br />
+            crafted for the ultimate chill experience. Discover <br />
+            the perfect blend of taste and refreshment.
+          </p>
+
+          <a href="#flavors" data-aos="zoom-in" data-aos-delay="400">
+            <button
+              style="background-color: #fcffff; color: rgb(15, 185, 185);"
+              class="text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-semibold hover:opacity-90 transition-colors whitespace-nowrap"
+            >
+              Shop Flavors
+            </button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="about" class="py-10 sm:py-16 lg:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <!-- Mobile Heading + Image -->
+      <div data-aos="fade-right">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4 block lg:hidden text-center">
+          About Let's Chill
+        </h2>
+        <img src="Let's Chill Factory.svg" alt="Let's Chill Factory" />
+      </div>
+
+      <!-- Text Content -->
+      <div data-aos="fade-left" data-aos-delay="100">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6 hidden lg:block">
+          About Let's Chill
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          Lets Chill is a soft drink brand under Humanity Enterprise. It was launched on 23rd MAY 2024 in Bhubaneswar, Odisha. It is available in Bhubaneswar. Our brand features 3 flavors right now and those are Jeera masala, orange and lemon. As per our tag line "only taste and purity" we strongly believe in maintaining good taste and purity in our drink.
+        </p>
+        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          Our mission is to deliver the perfect balance of flavor, refreshment, and quality at a price that makes premium beverages accessible to all. Every bottle of Let's Chill is produced in our state-of-the-art facility using filtered water and the finest natural ingredients.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          We're more than just a beverage company - we're your companion for those moments when you need to take a break, cool down, and simply chill out.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Punchline Section -->
+<section style="background-color: #007F74; padding: 80px 40px; color: white;">
+  <div
+    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1300px; margin: auto; gap: 40px;"
+  >
+    <!-- Image on Left -->
+    <div
+      style="flex: 1; min-width: 320px; text-align: center;"
+      data-aos="fade-right"
+    >
+      <img
+        src="20250724_0010_Galactic Refreshment Poster_remix_01k0w98h1ge3zsptdjrj0za8qg.png"
+        alt="Lets Chill Bottles"
+        style="width: 100%; max-width: 500px; border-radius: 10px;"
+      />
+    </div>
+
+    <!-- Punchline on Right -->
+    <div
+      style="flex: 1; min-width: 300px;"
+      data-aos="fade-left"
+    >
+      <h2
+        style="
+          font-size: 3.5rem;
+          line-height: 1.2;
+          font-weight: 700;
+          margin-bottom: 20px;
+        "
+        class="punch-heading"
+      >
+        Fuel Your Vibe<br />with Every Sip!
+      </h2>
+      <p
+        style="font-size: 1.25rem; font-weight: 400;"
+        class="punch-text"
+      >
+        Refresh. Reboot. <strong class="lets-chill-text">Lets Chill</strong> is your perfect partner for every mood and moment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styling -->
+<style>
+  .punch-heading {
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .lets-chill-text {
+    font-family: 'Pacifico', cursive;
+    color: #FFD700; /* Golden-yellow for highlight */
+    font-size: 1.5rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .punch-heading {
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .punch-text {
+      font-size: 1.05rem;
+      text-align: center;
+    }
+
+    .lets-chill-text {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .punch-heading {
+      font-size: 1.8rem;
+    }
+
+    .lets-chill-text {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+
+
+
+
+<!-- Flavours section -->
+    <section id="flavors" class="min-h-screen flex flex-col justify-center items-center bg-white text-center px-4">
+  <style>
+    .glow-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 9999px;
+      filter: blur(80px);
+      z-index: 0;
+      transition: all 0.4s ease;
+    }
+
+    .product-card {
+      transition: transform 0.5s ease, filter 0.5s ease;
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    .product-card.visible {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .product-card:hover .glow-bg {
+      filter: blur(100px);
+      opacity: 0.9;
+      width: 360px;
+      height: 360px;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card img {
+      transition: transform 0.4s ease;
+    }
+  </style>
+
+  <h2 class="text-5xl sm:text-6xl font-extrabold text-black mb-20">Flavours</h2>
+
+  <div class="flex flex-col md:flex-row items-center justify-center gap-20 flex-wrap">
+
+    <!--  Lemon Masti -->
+    <div class="relative w-72 flex flex-col items-center product-card">
+      <div class="glow-bg bg-green-300 opacity-60"></div>
+      <img src="lemon.png" alt="Lemon Masti" class="relative z-10 w-48" />
+      <a
+  href="https://wa.me/917849089629?text=Hey%2C%20I%20want%20Lemon%20Masti"
+  target="_blank"
+  class="relative z-10 mt-6 bg-teal-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-teal-700 transition inline-block text-center"
+>
+  Lemon Masti
+</a>
+
+    </div>
+
+    <!--  Zeera Masala -->
+    <div class="relative w-72 flex flex-col items-center product-card">
+      <div class="glow-bg bg-[#c59c78] opacity-60"></div>
+      <img src="zera.png" alt="Jeera Masala" class="relative z-10 w-48" />
+      <a
+  href="https://wa.me/917849089629?text=Hey%2C%20I%20want%20Zeera%20Masala"
+  target="_blank"
+  class="relative z-10 mt-6 bg-teal-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-teal-700 transition inline-block text-center"
+>
+  Zeera Masala
+</a>
+
+    </div>
+
+    <!--  Sweet Orange -->
+    <div class="relative w-72 flex flex-col items-center product-card">
+      <div class="glow-bg bg-orange-300 opacity-60"></div>
+      <img src="orange.png" alt="Sweet Orange" class="relative z-10 w-48" />
+      <a
+  href="https://wa.me/917849089629?text=Hey%2C%20I%20want%20Sweet%20Orange"
+  target="_blank"
+  class="relative z-10 mt-6 bg-teal-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-teal-700 transition inline-block text-center"
+>
+  Sweet Orange
+</a>
+
+    </div>
+
+  </div>
+
+  <!-- Scroll animation script -->
+  <script>
+    const cards = document.querySelectorAll('.product-card');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</section>
+
+
+
+
+ <section id="distributor" class="py-20 bg-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <!-- Heading -->
+    <h2 
+      class="text-4xl font-bold text-white mb-6"
+      data-aos="zoom-in"
+    >
+      BECOME DISTRIBUTOR
+    </h2>
+
+    <!-- Subheading -->
+    <p 
+      class="text-xl text-white/90 mb-12 max-w-3xl mx-auto"
+      data-aos="zoom-in" 
+      data-aos-delay="100"
+    >
+      Join our growing network of distributors and bring premium refreshment to your community. Partner with Let's Chill for exceptional business opportunities.
+    </p>
+
+    <!-- Button -->
+    <a 
+      href="#contact"
+      class="bg-white text-primary px-8 py-4 !rounded-button text-lg font-semibold hover:bg-gray-50 transition-colors whitespace-nowrap mb-16 inline-block"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+    >
+      Apply Now
+    </a>
+
+    <!-- Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div 
+        class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      >
+        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-money-dollar-circle-line text-white text-2xl"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">High Profit Margins</h3>
+        <p class="text-white/90">Competitive pricing structure with excellent profit potential for our distribution partners</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div 
+        class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      >
+        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-truck-line text-white text-2xl"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Reliable Logistics</h3>
+        <p class="text-white/90">Efficient supply chain management ensuring timely delivery and fresh products</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div 
+        class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center"
+        data-aos="zoom-in"
+        data-aos-delay="500"
+      >
+        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-customer-service-2-line text-white text-2xl"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Dedicated Support</h3>
+        <p class="text-white/90">Comprehensive training and ongoing support to help you succeed in your market</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Partners Say</h2>
+                <p class="text-xl text-gray-600">Hear from our successful distribution partners across the region</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-line text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Regional Distributor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"Partnering with Let's Chill has been incredibly rewarding. The product quality is exceptional and customer demand keeps growing. Their support team is always there when we need them."</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-line text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Franchise Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"The profit margins are excellent and the logistics support is outstanding. Let's Chill has helped us build a sustainable and profitable business in our local market."</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-line text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Amanda Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Retail Partner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"Our customers love the unique flavors, especially the Zeera Masala. The brand recognition is strong and sales have exceeded our expectations from day one."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+<section id="contact" class="py-20 bg-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-white mb-4">Contact Us</h2>
+      <p class="text-xl text-white/90">
+        Get in touch with our team for partnerships, inquiries, or support
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Form Card -->
+      <div
+        class="bg-white/10 backdrop-blur-sm rounded-xl p-8"
+        data-aos="zoom-in"
+      >
+        <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+        <form id="whatsappForm" class="space-y-6">
+          <div>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your Email"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
+          </div>
+          <div>
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-white text-primary px-6 py-3 !rounded-button font-semibold hover:bg-gray-50 transition-colors whitespace-nowrap"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Info Card -->
+      <div
+        class="bg-white/10 backdrop-blur-sm rounded-xl p-8"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <h3 class="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+        <div class="space-y-6">
+          <!-- Address -->
+          <div class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+              <i class="ri-map-pin-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Address</h4>
+              <p class="text-white/90">
+                Laxmisagar, Bhubaneswar<br />Odisha, 751006
+              </p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+              <i class="ri-phone-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Phone</h4>
+              <p class="text-white/90">+91-6372362464</p>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+              <i class="ri-mail-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Email</h4>
+              <p class="text-white/90">info@letschill.com</p>
+            </div>
+          </div>
+          <!-- Business Hours -->
+          <div class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+              <i class="ri-time-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Business Hours</h4>
+              <p class="text-white/90">
+                Mon - Fri: 9:00 AM - 6:00 PM<br />
+                Sat: 10:00 AM - 4:00 PM<br />
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center">
+        <img src="footer logo.png" alt="Lets Chill Logo" class="h-20 w-auto" />
+      </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Let's Chill is your premium destination for refreshing cold beverages. We craft exceptional flavors that bring people together and create memorable moments.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill text-white"></i>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-fill text-white"></i>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#flavors" class="text-gray-400 hover:text-white transition-colors">Our Flavors</a></li>
+                        <li><a href="#distributor" class="text-gray-400 hover:text-white transition-colors">Become Distributor</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <div class="space-y-3">
+                        <p class="text-gray-400">Laxmisagar,Bhubaneswar<br>Odisha,751006</p>
+                        <p class="text-gray-400">Phone: +91-6372362464</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2025 Let's Chill. All rights reserved.</p>
+                <p class="text-gray-400">@Designed by DesignDock</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="header-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.remove('shadow-lg');
+                }
+            });
+        });
+    </script>
+    <script>
+  document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const fullMessage = `Name:${name} Gmail:${email}. Message:${message}`;
+    const whatsappURL = `https://wa.me/917849089629?text=${encodeURIComponent(fullMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+</body>
+</html>
